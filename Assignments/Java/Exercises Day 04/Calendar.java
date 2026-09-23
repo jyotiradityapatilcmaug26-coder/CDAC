@@ -19,7 +19,9 @@ class Date {
         }
 
         // Validate day
-        if (dd < 1 || dd > getDaysInMonth(month, year)) {
+        int maxDays = getDaysInMonth(month, year);
+
+        if (dd < 1 || dd > maxDays) {
             day = 1;
         } else {
             day = dd;
@@ -37,10 +39,11 @@ class Date {
     private int getDaysInMonth(int month, int year) {
 
         if (month == 2) {
-            if (isLeapYear(year))
+            if (isLeapYear(year)) {
                 return 29;
-            else
+            } else {
                 return 28;
+            }
         }
 
         if (month == 4 || month == 6 ||
@@ -103,7 +106,8 @@ class Date {
 
         year = year + years;
 
-        // 29 Feb -> 28 Feb if new year is not leap year
+        // 29 February becomes 28 February
+        // if new year is not a leap year
         if (month == 2 && day == 29 && !isLeapYear(year)) {
             day = 28;
         }
@@ -130,30 +134,6 @@ class Date {
             getMonth() + "/" +
             getYear()
         );
-    }
-
-    // Compare Dates
-    public int compare(Date other) {
-
-        if (this.year < other.year)
-            return -1;
-
-        if (this.year > other.year)
-            return 1;
-
-        if (this.month < other.month)
-            return -1;
-
-        if (this.month > other.month)
-            return 1;
-
-        if (this.day < other.day)
-            return -1;
-
-        if (this.day > other.day)
-            return 1;
-
-        return 0;
     }
 }
 
@@ -183,7 +163,7 @@ public class Calendar {
             System.out.println("3. Add Months");
             System.out.println("4. Add Years");
             System.out.println("5. Display");
-            System.out.println("6. Compare Dates");
+            System.out.println("6. Compare Dates (not implement)");
             System.out.println("7. Exit");
             System.out.println("--------------------------------");
 
@@ -256,39 +236,7 @@ public class Calendar {
 
                 case 6:
 
-                    Date compareDate = new Date();
-
-                    System.out.print("Enter day: ");
-                    int d = sc.nextInt();
-
-                    System.out.print("Enter month: ");
-                    int m = sc.nextInt();
-
-                    System.out.print("Enter year: ");
-                    int y = sc.nextInt();
-
-                    compareDate.setDate(d, m, y);
-
-                    int result = objDate.compare(compareDate);
-
-                    if (result == 0) {
-
-                        System.out.println(
-                            "Both dates are equal."
-                        );
-
-                    } else if (result < 0) {
-
-                        System.out.println(
-                            "Current date is earlier."
-                        );
-
-                    } else {
-
-                        System.out.println(
-                            "Current date is later."
-                        );
-                    }
+                    System.out.println("Compare Dates not implemented.");
 
                     break;
 
@@ -302,9 +250,7 @@ public class Calendar {
 
                 default:
 
-                    System.out.println(
-                        "Invalid choice."
-                    );
+                    System.out.println("Invalid choice.");
             }
 
         } while (choice != 7);
