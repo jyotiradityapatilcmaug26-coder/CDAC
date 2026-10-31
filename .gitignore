@@ -5,3 +5,6 @@
 /ADS
 /DBT
 /WPT
+/node_modules
+/package-lock.json
+/package.json

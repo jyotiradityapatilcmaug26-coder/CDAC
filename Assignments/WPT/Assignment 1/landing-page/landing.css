@@ -1,0 +1,136 @@
+/* Normal selector precedence: ID > class/attribute/pseudo-class > element > universal; inline styles generally override normal stylesheet declarations. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #3a2c25;
+    background: #fff8ed;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Arial, sans-serif;
+}
+
+#banner {
+    min-height: 280px;
+    padding: 70px 20px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #42291b, #b46b3d, #f0c48b);
+}
+
+#banner h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+main {
+    width: min(1100px, 92%);
+    margin: 30px auto;
+}
+
+.highlight {
+    color: #a04e26;
+    font-weight: bold;
+}
+
+.cards {
+    display: flex;
+    gap: 22px;
+    justify-content: center;
+    align-items: stretch;
+    margin: 28px 0;
+}
+
+.card {
+    width: 30%;
+    height: 255px;
+    background-color: #fff;
+    color: #3a2c25;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #d5a477;
+    border-radius: 16px;
+    padding: 22px;
+    margin: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 8px 20px #56351a15;
+    transition: background-color .25s ease, transform .25s ease;
+}
+
+.card.featured {
+    flex: 1.5;
+    border-color: #8d4d2b;
+    background-color: #fff0d9;
+}
+
+.card:hover {
+    background-color: #f8dfbd;
+    transform: translateY(-4px);
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #8c4325;
+}
+
+.pill {
+    display: inline-block;
+    background: #3b5998;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: .75rem;
+}
+
+.button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 13px 18px;
+    border-radius: 30px;
+    color: white;
+    background: #7b3f20;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    box-shadow: 0 5px 18px #30180d33;
+    transition: background-color .25s ease;
+}
+
+.button:hover {
+    background: rgb(173, 83, 37);
+}
+
+a {
+    color: #7b3f20;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+@media (max-width: 700px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: auto;
+        height: auto;
+        min-height: 210px;
+    }
+
+    #banner h1 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,36 @@
+Assignment 1: HTML and CSS — Part A Answers
+
+1. When a visitor opens a portfolio link, the browser (client) sends an HTTP request to the web server. The server finds the requested HTML file and sends an HTTP response. The browser reads the HTML and requests linked CSS, images and other files, then displays the page. If the site has dynamic features, application logic runs on the server or in the browser as appropriate; a database is normally on the server side and is accessed by server-side application logic, not directly by static HTML.
+Diagram:
+[Browser / Client] -- HTTP request --> [Web Server / Application]
+[Browser / Client] <-- HTML, CSS, images -- [Web Server / Application]
+                                            |
+                                      [Database]
+Draw this diagram on paper, photograph it, and save it as client-server-diagram.png.
+
+2. Use POST for a contact form because it sends form data in the request body and is appropriate for submitting a message. If method is omitted, the default is GET. A successful submission commonly returns 200 OK, or 201 Created if a resource is created. Server errors are in the 5xx family, such as 500 Internal Server Error.
+
+3. The three CSS types are inline CSS (the style attribute on an element), internal CSS (a style block in the HTML head), and external CSS (a separate .css file linked with link). For normal author styles, inline styles generally override internal and external rules when specificity and importance are otherwise equal. For styles shared by four pages, use external CSS because one stylesheet can be linked from all pages and maintained in one place.
+
+4. The color from #intro applies because an ID selector has greater specificity than a class, tag, or universal selector. Specificity order from strongest to weakest for these selectors is #intro, .note, p, *. (Other factors such as !important and source order can affect conflicts.)
+
+5. Padding is the space inside an element between its content and border. Margin is the space outside the border, separating the element from others.
+   margin
+   ┌─────────────────────────────┐
+   │ border                      │
+   │  ┌───────────────────────┐  │
+   │  │ padding               │  │
+   │  │  ┌─────────────────┐  │  │
+   │  │  │ content         │  │  │
+   │  │  └─────────────────┘  │  │
+   │  └───────────────────────┘  │
+   └─────────────────────────────┘
+With box-sizing: border-box, the declared width and height include content, padding and border, making sizing easier to control.
+
+6. JavaScript commonly runs in the browser's JavaScript engine, such as V8 in Chrome. The engine parses and executes the code and may compile it internally, so a separate manual compile step is not normally required. JavaScript can respond to clicks and validate form input or update page content dynamically; HTML and CSS alone do not provide this general programming behavior.
+
+7. JavaScript is dynamically typed. After a = 5, a holds a number; after a = "hello", the same variable holds a string. Three common data types are number, string and boolean.
+
+8. static is the normal document flow position and is the default. relative stays in the normal flow but can be visually shifted from its original position. absolute is positioned relative to its nearest positioned ancestor and removed from normal flow. fixed is positioned relative to the viewport and stays in place while scrolling. top, right, bottom and left set offsets for positioned elements.
+
+9. Flex items with flex values 1, 2 and 1 share the available space in a 1:2:1 ratio, assuming no other sizing constraints: about 25%, 50% and 25%. gap sets space between items. justify-content: center centres the group along the main axis when there is extra space.
