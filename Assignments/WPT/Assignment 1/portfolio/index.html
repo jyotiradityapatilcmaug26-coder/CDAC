@@ -1,41 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jyotiraditya Patil | Portfolio</title><link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jyotiraditya Patil | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
   <!-- Internal CSS is used for this page's small hero accent only. -->
-  <style>.hero .welcome-note { letter-spacing: .08em; text-transform: uppercase; }</style>
+  <style>
+    .hero .welcome-note {
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+  </style>
 </head>
+
 <body>
-<header id="main-nav">
-  <a class="brand" href="index.html"><img class="logo" src="images/profile.svg" alt="JP logo"><span>JP | Portfolio</span></a>
-  <nav class="nav-links" aria-label="Main navigation">
-    <a href="index.html">Home</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-  </nav>
-</header>
-<main>
-  <section class="hero">
-    <p class="welcome-note">Welcome to my portfolio</p>
-    <img class="profile-photo" src="images/profile.svg" width="150" height="150" alt="Illustrated JP profile avatar">
-    <h1>Jyotiraditya Patil</h1>
-    <p>I am a <span class="tagline">CDAC learner and aspiring software developer</span> building a strong foundation in programming and web technologies.</p>
-    <a class="button" href="projects.html">View my projects</a>
-  </section>
-  <section class="middle-row">
-    <div class="subscribe">
-      <h2>Stay in touch</h2><p>Get occasional updates about my learning journey.</p>
-      <form action="#" method="get" aria-label="Subscribe form">
-        <div class="field"><label for="subscribe-email">Email address</label><input id="subscribe-email" name="email" type="email" placeholder="you@example.com" required></div>
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-    <div class="about-box"><h2>About me</h2><p>I enjoy learning by writing code, understanding concepts step by step, and practising through small projects. I am currently developing my skills in C++, Java, databases, HTML and CSS.</p><p><a href="https://github.com/" target="_blank" rel="noopener">Visit GitHub</a> to explore coding projects.</p></div>
-  </section>
-  <section><h2>My journey</h2><div class="card-row">
-    <article class="card"><span class="card-icon" aria-hidden="true">🎓</span><h3>Education</h3><ol><li>School education</li><li>Undergraduate studies</li><li>PGCP-AC at CDAC (in progress)</li></ol></article>
-    <article class="card featured"><span class="card-badge">In progress</span><span class="card-icon" aria-hidden="true">💻</span><h3>Skills</h3><ul id="skills-list"><li>C++ fundamentals</li><li>Java programming</li><li>HTML</li><li>CSS and Flexbox</li><li>SQL / MySQL</li><li>Problem solving</li></ul></article>
-    <article class="card"><span class="card-icon" aria-hidden="true">🚀</span><h3>Projects</h3><p>Course assignments and practice programs help me apply concepts and improve consistently.</p><a href="projects.html">See project examples</a></article>
-  </div></section>
-</main>
-<footer>Built with HTML and CSS · <!-- later: dark mode button here --></footer>
-</body></html>
+  <header id="main-nav">
+    <a class="brand" href="index.html"><img class="logo" src="images/profile.svg" alt="JP logo"><span>JP |
+        Portfolio</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a><a
+        href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="welcome-note">Welcome to my portfolio</p>
+      <img class="profile-photo" src="images/profile.svg" width="150" height="150" alt="Illustrated JP profile avatar">
+      <h1>Jyotiraditya Patil</h1>
+      <p>I am a <span class="tagline">CDAC learner and aspiring software developer</span> building a strong foundation
+        in programming and web technologies.</p>
+      <a class="button" href="projects.html">View my projects</a>
+    </section>
+    <section class="middle-row">
+      <div class="subscribe">
+        <h2>Stay in touch</h2>
+        <p>Get occasional updates about my learning journey.</p>
+        <form action="#" method="get" aria-label="Subscribe form">
+          <div class="field"><label for="subscribe-email">Email address</label><input id="subscribe-email" name="email"
+              type="email" placeholder="you@example.com" required></div>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="about-box">
+        <h2>About me</h2>
+        <p>I enjoy learning by writing code, understanding concepts step by step, and practising through small projects.
+          I am currently developing my skills in C++, Java, databases, HTML and CSS.</p>
+        <p><a href="https://github.com/" target="_blank" rel="noopener">Visit GitHub</a> to explore coding projects.</p>
+      </div>
+    </section>
+    <section>
+      <h2>My journey</h2>
+      <div class="card-row">
+        <article class="card"><span class="card-icon" aria-hidden="true">🎓</span>
+          <h3>Education</h3>
+          <ol>
+            <li>School education</li>
+            <li>Undergraduate studies</li>
+            <li>PGCP-AC at CDAC (in progress)</li>
+          </ol>
+        </article>
+        <article class="card featured"><span class="card-badge">In progress</span><span class="card-icon"
+            aria-hidden="true">💻</span>
+          <h3>Skills</h3>
+          <ul id="skills-list">
+            <li>C++ fundamentals</li>
+            <li>Java programming</li>
+            <li>HTML</li>
+            <li>CSS and Flexbox</li>
+            <li>SQL / MySQL</li>
+            <li>Problem solving</li>
+          </ul>
+        </article>
+        <article class="card"><span class="card-icon" aria-hidden="true">🚀</span>
+          <h3>Projects</h3>
+          <p>Course assignments and practice programs help me apply concepts and improve consistently.</p><a
+            href="projects.html">See project examples</a>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer>Built with HTML and CSS · <!-- later: dark mode button here --></footer>
+</body>
+
+</html>
