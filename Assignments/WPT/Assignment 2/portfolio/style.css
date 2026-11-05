@@ -1,0 +1,283 @@
+/* Selector precedence (strongest to weakest, for normal rules): ID, class/attribute/pseudo-class, element/pseudo-element, universal. Inline styles usually beat these when importance is equal. */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding-top: 76px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #243047;
+    background: #f5f7fb;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+a {
+    color: #2357a6;
+}
+
+a:hover {
+    color: #d35d38;
+    transition: color .25s ease;
+}
+
+#main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 12px 6%;
+    color: white;
+    background: linear-gradient(100deg, #152744, #315b8a);
+    box-shadow: 0 3px 12px #14243b33;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #d9e6f7;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #ffcf8b;
+}
+
+main,
+.page-wrap {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+.hero {
+    padding: 62px 20px 52px;
+    text-align: center;
+    background: linear-gradient(135deg, #e4efff, #fff4e8);
+    border-radius: 0 0 24px 24px;
+}
+
+.hero h1 {
+    margin-bottom: 8px;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    color: #172d50;
+}
+
+.tagline {
+    color: #c15d36;
+    font-weight: bold;
+}
+
+.button,
+button {
+    display: inline-block;
+    border: 0;
+    border-radius: 8px;
+    padding: 11px 18px;
+    background: #2357a6;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .25s ease, transform .25s ease;
+}
+
+.button:hover,
+button:hover {
+    background: #d35d38;
+    transform: translateY(-2px);
+}
+
+.middle-row {
+    display: flex;
+    gap: 22px;
+    align-items: stretch;
+    margin: 28px 0;
+}
+
+.subscribe,
+.about-box,
+.card,
+.project-card {
+    background: white;
+    border: 1px solid #dce3ef;
+    border-radius: 14px;
+    padding: 22px;
+    margin: 0;
+    box-shadow: 0 6px 20px #2036570d;
+}
+
+.subscribe {
+    flex: 1;
+}
+
+.about-box {
+    flex: 2;
+}
+
+input,
+select,
+textarea {
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #bac7d8;
+    border-radius: 7px;
+    font: inherit;
+}
+
+.subscribe input {
+    width: 100%;
+    margin: 8px 0 12px;
+}
+
+.card-row,
+.project-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 24px 0 40px;
+}
+
+.card {
+    position: relative;
+    flex: 1;
+    width: 30%;
+}
+
+.card.featured {
+    flex: 1.4;
+}
+
+.card-icon {
+    font-size: 2rem;
+}
+
+.card-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    background: #ffe0b5;
+    color: #6e3913;
+    font-size: .75rem;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 4px 14px #20365722;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 22px 0;
+    background: white;
+}
+
+th,
+td {
+    border: 1px solid #cbd5e1;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: #203b62;
+    color: white;
+}
+
+form {
+    display: grid;
+    gap: 14px;
+    max-width: 760px;
+    margin: 24px auto;
+    padding: 24px;
+    background: white;
+    border-radius: 14px;
+    border: 1px solid #dce3ef;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.field {
+    display: grid;
+    gap: 4px;
+}
+
+.inline-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: #64748b;
+}
+
+@media (max-width: 700px) {
+    #main-nav {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    body {
+        padding-top: 125px;
+    }
+
+    .middle-row,
+    .card-row,
+    .project-cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+}

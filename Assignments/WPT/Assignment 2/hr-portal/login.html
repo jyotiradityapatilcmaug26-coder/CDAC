@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova HR | Login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-span {
+            color: #dc2626;
+            font-size: 0.85rem;
+            display: block;
+            margin: 4px 0 8px;
+            font-weight: 500;
+        }
+        .password-row {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        .password-row input {
+            flex: 1;
+        }
+        .toggle-btn {
+            padding: 8px 12px;
+            background: #e2e8f0;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        #login-success {
+            display: none;
+            padding: 10px;
+            margin-bottom: 12px;
+            background: #ecfdf5;
+            color: #065f46;
+            border: 1px solid #10b981;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+
+<body class="login-page">
+    <nav>
+        <a href="login.html">Login</a>
+        <a href="directory.html">Directory</a>
+        <a href="onboarding.html">Onboarding</a>
+    </nav>
+    <div class="login-card">
+        <h1>TechNova HR</h1>
+        <p>Sign in to your employee workspace.</p>
+
+        <div id="login-success" role="alert"></div>
+
+        <form action="#" method="post" onsubmit="return validate()">
+            <label for="username">Username</label>
+            <input class="login-input" id="username" name="username" type="text" placeholder="Enter username" onkeyup="validateUsername()">
+            <span class="error-span" id="username-error"></span>
+
+            <label for="password">Password</label>
+            <div class="password-row">
+                <input class="login-input" id="password" name="password" type="password" placeholder="Enter password" onkeyup="validatePassword()">
+                <button type="button" id="toggle-password-btn" class="toggle-btn" onclick="togglePasswordVisibility()">Show</button>
+            </div>
+            <span class="error-span" id="password-error"></span>
+
+            <button id="login-button" type="submit">Login</button>
+        </form>
+        <p>Need an account? <a class="signup" href="onboarding.html">Sign Up</a></p>
+        <small>Demo layout only; no authentication is connected.</small>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+
+</html>

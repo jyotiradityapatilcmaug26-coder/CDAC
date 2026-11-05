@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #243047;
+    background: #f3f6fb;
+    line-height: 1.5;
+    padding-top: 76px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    padding: 22px;
+    background: #152744;
+    z-index: 5;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffc978;
+    transition: color .2s ease;
+}
+
+main {
+    width: min(1000px, 92%);
+    margin: 35px auto;
+}
+
+h1 {
+    color: #203b62;
+}
+
+.panel {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 8px 26px #182c4815;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th,
+td {
+    border: 1px solid #cbd5e1;
+    padding: 11px;
+    text-align: left;
+}
+
+th {
+    background: #203b62;
+    color: white;
+}
+
+form {
+    display: grid;
+    gap: 13px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bdc9d9;
+    border-radius: 6px;
+    font: inherit;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    width: auto;
+}
+
+button {
+    padding: 11px 18px;
+    border: 0;
+    border-radius: 7px;
+    color: white;
+    background: #2357a6;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #d35d38;
+    transition: background .25s;
+}
+
+#login-button {
+    width: 100%;
+}
+
+.login-page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: linear-gradient(135deg, #172d50, #6b91c6, #f4c99c);
+}
+
+.login-card {
+    width: 340px;
+    min-height: 360px;
+    margin: auto;
+    padding: 35px 28px;
+    border-radius: 18px;
+    background: white;
+    text-align: center;
+    box-shadow: 0 15px 40px #11182744;
+}
+
+.login-input {
+    margin: 14px 0;
+    border: 0;
+    border-bottom: 1px solid #8da0b8;
+    border-radius: 0;
+    outline: none;
+    padding: 13px 5px;
+}
+
+.signup {
+    text-decoration: none;
+}
+
+.field {
+    display: grid;
+    gap: 5px;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}

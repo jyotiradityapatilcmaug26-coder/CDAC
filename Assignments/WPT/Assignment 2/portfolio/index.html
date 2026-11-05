@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jyotiraditya Patil | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Internal CSS is used for this page's small hero accent only. -->
+  <style>
+    .hero .welcome-note {
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .interactive-card {
+      background: #ffffff;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .welcome-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+    .welcome-row input {
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      font-size: 1rem;
+      flex: 1;
+      min-width: 180px;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="main-nav">
+    <a class="brand" href="index.html"><img class="logo" src="images/profile.svg" alt="JP logo"><span>JP |
+        Portfolio</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a><a
+        href="https://github.com/jyotiraditya-patil" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="welcome-note">Welcome to my portfolio</p>
+      <img class="profile-photo" src="images/profile.svg" width="150" height="150" alt="Illustrated JP profile avatar">
+      <h1 id="main-title">Jyotiraditya Patil</h1>
+      <p>I am a <span class="tagline">CDAC learner and aspiring software developer</span> building a strong foundation
+        in programming and web technologies.</p>
+      <a class="button" href="projects.html">View my projects</a>
+    </section>
+
+    <!-- Welcome box section -->
+    <section class="interactive-card welcome-section">
+      <h2 id="welcome-heading">Welcome, visitor!</h2>
+      <p>Tell me your name to personalize your visit:</p>
+      <div class="welcome-row">
+        <label for="visitor-name">Your Name:</label>
+        <input type="text" id="visitor-name" placeholder="Enter your name">
+        <button type="button" class="button" onclick="greetVisitor()">Say Hello</button>
+      </div>
+      <div id="quote-box" style="margin-top: 1rem; color: #475569; font-size: 0.95rem;"></div>
+    </section>
+
+    <section class="middle-row">
+      <div class="subscribe">
+        <h2>Stay in touch</h2>
+        <p>Get occasional updates about my learning journey.</p>
+        <form action="#" method="get" aria-label="Subscribe form">
+          <div class="field"><label for="subscribe-email">Email address</label><input id="subscribe-email" name="email"
+              type="email" placeholder="you@example.com" required></div>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="about-box">
+        <h2>About me</h2>
+        <p>I enjoy learning by writing code, understanding concepts step by step, and practising through small projects.
+          I am currently developing my skills in C++, Java, databases, HTML, CSS and JavaScript.</p>
+        <p><a href="https://github.com/" target="_blank" rel="noopener">Visit GitHub</a> to explore coding projects.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>My journey</h2>
+      <div class="card-row">
+        <article class="card"><span class="card-icon" aria-hidden="true">🎓</span>
+          <h3>Education</h3>
+          <ol>
+            <li>School education</li>
+            <li>Undergraduate studies</li>
+            <li>PGCP-AC at CDAC (in progress)</li>
+          </ol>
+        </article>
+        <article class="card featured">
+          <span class="card-badge">In progress</span>
+          <span class="card-icon" aria-hidden="true">💻</span>
+          <h3>Skills</h3>
+          <div style="margin-bottom: 0.5rem;">
+            <button type="button" id="toggle-skills-btn" onclick="toggleSkills()" style="padding: 4px 10px; cursor: pointer; border-radius: 4px; border: 1px solid #315b8a; background: #ffffff;">Hide</button>
+          </div>
+          <ul id="skills-list">
+            <li>C++ fundamentals</li>
+            <li>Java programming</li>
+            <li>HTML & CSS</li>
+            <li>Modern JavaScript (ES6+)</li>
+            <li>SQL / MySQL</li>
+            <li>Problem solving & Algorithms</li>
+          </ul>
+        </article>
+        <article class="card"><span class="card-icon" aria-hidden="true">🚀</span>
+          <h3>Projects</h3>
+          <p>Course assignments and practice programs help me apply concepts and improve consistently.</p>
+          <a href="projects.html">See project examples</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- GitHub Repositories section -->
+    <section class="interactive-card">
+      <h2>GitHub Repositories</h2>
+      <p>Explore public code repositories dynamically loaded via asynchronous JavaScript:</p>
+      <button type="button" class="button" id="load-repos-btn" onclick="fetchGitHubRepos()">Load Repositories</button>
+      <p id="repo-status" style="margin: 0.5rem 0; font-weight: 500;"></p>
+      <p id="repo-error" style="color: red; margin: 0.5rem 0; font-weight: bold;"></p>
+      <ul id="repo-list" style="margin-top: 0.5rem; padding-left: 1.5rem;"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <span>Built with HTML, CSS & JavaScript</span> · 
+    <button type="button" id="theme-btn" onclick="toggleTheme()" style="padding: 4px 12px; cursor: pointer; border-radius: 4px; border: 1px solid #315b8a; background: #ffffff;">Dark mode</button>
+  </footer>
+
+  <script src="js/home.js"></script>
+</body>
+
+</html>

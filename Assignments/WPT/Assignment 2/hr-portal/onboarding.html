@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Joiner Onboarding | TechNova</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-span {
+            color: #dc2626;
+            font-size: 0.85rem;
+            display: block;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+        #onboarding-status {
+            display: none;
+            padding: 12px 16px;
+            margin: 1rem 0;
+            border: 1px solid #93c5fd;
+            border-radius: 6px;
+            background: #eff6ff;
+            color: #1e40af;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        #onboarding-error {
+            display: none;
+            padding: 12px 16px;
+            margin: 1rem 0;
+            border: 1px solid #f87171;
+            border-radius: 6px;
+            background: #fef2f2;
+            color: #991b1b;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="login.html">Login</a>
+        <a href="directory.html">Directory</a>
+        <a href="onboarding.html">Onboarding</a>
+    </nav>
+    <main class="panel">
+        <h1>New Joiner Onboarding</h1>
+        <p>Complete the induction registration form below.</p>
+
+        <!-- Dynamic asynchronous progress indicators -->
+        <div id="onboarding-status" role="status"></div>
+        <div id="onboarding-error" role="alert"></div>
+
+        <form id="onboarding-form" action="#" method="post" onsubmit="return handleOnboardingSubmit(event)">
+            <div class="field">
+                <label for="full-name">Full name *</label>
+                <input id="full-name" name="fullName" type="text" placeholder="Enter your full name" onkeyup="validateFullName()">
+                <span class="error-span" id="name-error"></span>
+            </div>
+
+            <div class="field">
+                <label for="official-email">Official email *</label>
+                <input id="official-email" name="officialEmail" type="email" placeholder="name@technova.example" onkeyup="validateOfficialEmail()">
+                <span class="error-span" id="email-error"></span>
+            </div>
+
+            <div class="field">
+                <label for="temporary-password">Temporary password</label>
+                <input id="temporary-password" name="temporaryPassword" type="password">
+            </div>
+
+            <div class="field">
+                <label for="dob">Date of birth</label>
+                <input id="dob" name="dob" type="date">
+            </div>
+
+            <div class="field">
+                <label for="joining-date">Joining date</label>
+                <input id="joining-date" name="joiningDate" type="date">
+            </div>
+
+            <div class="field">
+                <label for="orientation">Orientation slot</label>
+                <input id="orientation" name="orientation" type="datetime-local">
+            </div>
+
+            <div class="field">
+                <label for="reporting-time">Reporting time on day one</label>
+                <input id="reporting-time" name="reportingTime" type="time">
+            </div>
+
+            <div class="field">
+                <span>Gender</span>
+                <div class="options">
+                    <label><input id="gender-female" name="gender" type="radio" value="female"> Female</label>
+                    <label><input id="gender-male" name="gender" type="radio" value="male"> Male</label>
+                    <label><input id="gender-other" name="gender" type="radio" value="other"> Other</label>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="qualification">Highest qualification *</label>
+                <select id="qualification" name="qualification" onchange="validateQualification()">
+                    <option value="">Select qualification</option>
+                    <option value="school">School</option>
+                    <option value="diploma">Diploma</option>
+                    <option value="bachelor">Bachelor's degree</option>
+                    <option value="master">Master's degree</option>
+                    <option value="other">Other</option>
+                </select>
+                <span class="error-span" id="qual-error"></span>
+            </div>
+
+            <div class="field">
+                <label for="department">Department *</label>
+                <select id="department" name="department" onchange="validateDepartment()">
+                    <option value="">Select department</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="hr">Human Resources</option>
+                    <option value="design">Design</option>
+                    <option value="finance">Finance</option>
+                    <option value="marketing">Marketing</option>
+                </select>
+                <span class="error-span" id="dept-error"></span>
+            </div>
+
+            <div class="field">
+                <label for="address">Current address</label>
+                <textarea id="address" name="address" rows="4" placeholder="Enter current address"></textarea>
+            </div>
+
+            <div class="field">
+                <label for="resume">Passport photo or resume</label>
+                <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+            </div>
+
+            <div class="field">
+                <label><input id="declaration" name="declaration" type="checkbox"> I declare that the information provided is accurate.</label>
+            </div>
+
+            <div class="options">
+                <button type="submit" id="onboarding-submit-btn">Submit Onboarding</button>
+                <button type="reset">Reset</button>
+                <button type="button">Need help?</button>
+            </div>
+        </form>
+
+        <h2>TechNova office map</h2>
+        <iframe title="Example office map"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=72.82%2C18.96%2C72.84%2C18.98&amp;layer=mapnik"
+            width="100%" height="280" style="border:1px solid #cbd5e1" loading="lazy"></iframe>
+        <p><small>Office location: Bandra Kurla Complex (BKC), Mumbai.</small></p>
+    </main>
+
+    <script src="js/onboarding.js"></script>
+</body>
+
+</html>
